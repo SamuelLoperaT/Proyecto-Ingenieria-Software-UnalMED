@@ -1,4 +1,4 @@
-# Proyecto-Ingenieria-Software-UnalMED
+# PyQues
 
 ---
 
