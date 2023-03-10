@@ -1,4 +1,4 @@
-# PyQues
+# PyQués
 
 ---
 
