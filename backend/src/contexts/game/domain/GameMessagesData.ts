@@ -11,4 +11,5 @@ export class GameMessagesDataConfig
   implements Required<Record<GameMessagesConstants, any>>
 {
   GAME_CREATED: GameDto;
+  USER_JOINED: GameDto;
 }

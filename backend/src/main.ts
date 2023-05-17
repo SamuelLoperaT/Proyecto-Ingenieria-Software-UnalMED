@@ -1,12 +1,18 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './AppModule';
-import { Logger } from '@nestjs/common';
+import { HttpStatus, Logger, ValidationPipe } from '@nestjs/common';
 
 const logger: Logger = new Logger('MAIN');
 
 async function bootstrap() {
   logger.log(`[${bootstrap.name}] INIT`);
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+      errorHttpStatusCode: HttpStatus.BAD_REQUEST,
+    }),
+  );
   app.enableCors();
   await app.listen(Number(process.env.PORT));
   logger.log(

@@ -3,14 +3,25 @@ import { CreateGameApp } from '../../../../contexts/game/application/create/Crea
 import { IWsRepository } from '../../../../contexts/shared/domain/IWsRepository';
 import { GameMessagesDataConfig } from '../../../../contexts/game/domain/GameMessagesData';
 import { WsMainGateway } from '../../../../contexts/shared/infrastructure/gateways/WsMainGateway';
+import { JoinGameApp } from '../../../../contexts/game/application/join/JoinGameApp';
 
 export const CreateGameAppProvider: FactoryProvider<CreateGameApp> = {
   inject: [WsMainGateway],
   provide: CreateGameApp,
 
-  useFactory: async (
+  useFactory: (
     socketManager: IWsRepository<GameMessagesDataConfig>,
-  ): Promise<CreateGameApp> => {
+  ): CreateGameApp => {
     return new CreateGameApp(socketManager);
+  },
+};
+export const JoinGameAppProvider: FactoryProvider<JoinGameApp> = {
+  inject: [WsMainGateway],
+  provide: JoinGameApp,
+
+  useFactory: (
+    socketManager: IWsRepository<GameMessagesDataConfig>,
+  ): JoinGameApp => {
+    return new JoinGameApp(socketManager);
   },
 };
