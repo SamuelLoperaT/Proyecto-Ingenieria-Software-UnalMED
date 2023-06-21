@@ -1,0 +1,87 @@
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  }
+  
+#config-container {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  }
+  
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+/*
+input{
+  background-color: rgb(56, 56, 70);
+  display: block;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+*/
+
+#Start-buttom {
+  background-color: blue;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  padding: 30px 60px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 24px;
+  border-radius: 10px
+}
+
+a {
+  background-color: blue;
+  text-decoration: none;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 10px
+}
+
+#numDados, #numeroJugadores {
+  background-color: rgb(56, 56, 70);
+  display: block;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  color: white;
+  padding: 6px 80px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 10px
+}
+
+#numCaras {
+  background-color: rgb(56, 56, 70);
+  display: block;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  color: white;
+  padding: 6px 76px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 10px
+}
+
+body {
+  background-image: url('../img/peepo.jpg');
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
