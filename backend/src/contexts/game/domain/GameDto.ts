@@ -2,7 +2,7 @@ import { PlayerDto } from '../../players/domain/PlayerDto';
 import { ColorConstants } from '../../shared/domain/ColorConstants';
 import { GameStatusConstants } from './GameStatusConstants';
 import { DiceDto } from '../../dice/domain/DiceDto';
-import { BoardDto } from '../../board/BoardDto';
+import { BoardDto } from '../../board/domain/BoardDto';
 
 export interface GameDto {
   gameId: string;

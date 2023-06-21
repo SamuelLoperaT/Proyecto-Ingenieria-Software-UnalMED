@@ -1,6 +1,6 @@
 import { IdObject } from '../../shared/domain/IdObject';
 import { v4 as uuidv4 } from 'uuid';
-import { Board } from '../../board/Board';
+import { Board } from '../../board/domain/Board';
 
 export class LocateId extends IdObject {
   static generate(board?: Board): LocateId {

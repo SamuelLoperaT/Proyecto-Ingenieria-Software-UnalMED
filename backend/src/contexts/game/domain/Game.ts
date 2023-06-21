@@ -8,7 +8,7 @@ import { GameStatus } from './GameStatus';
 import { GameStatusConstants } from './GameStatusConstants';
 import { ColorConstants } from '../../shared/domain/ColorConstants';
 import { Dice } from '../../dice/domain/Dice';
-import { Board } from '../../board/Board';
+import { Board } from '../../board/domain/Board';
 
 export class Game extends DomainRoot<GameDto> implements ParamsOf<GameDto> {
   public static games: Map<string, Game> = new Map<string, Game>();
