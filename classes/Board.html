@@ -1,0 +1,689 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>backend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">backend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >Board</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/contexts/board/Board.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/DomainRoot.html" target="_self" >DomainRoot</a></code>
+            </p>
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../miscellaneous/typealiases.html#ParamsOf" target="_self" >ParamsOf</a></code>
+            </p>
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#allLocations" >allLocations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#boxes" >boxes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#gameId" >gameId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#jails" >jails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#leaders" >leaders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#sky" >sky</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#fromPrimitives" >fromPrimitives</a>
+                            </li>
+                            <li>
+                                <a href="#toPrimitives" >toPrimitives</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(boxes: <a href="../classes/Box.html" target="_self">Array&lt;Box&gt;</a>, gameId: <a href="../classes/GameId.html" target="_self">GameId</a>, jails: <a href="../classes/Jail.html" target="_self">Array&lt;Jail&gt;</a>, leaders: <a href="../classes/Box.html" target="_self">Array&lt;Array&lt;Box&gt;&gt;</a>, sky: <a href="../classes/Sky.html" target="_self">Sky</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/contexts/board/Board.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>boxes</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Box.html" target="_self" >Array&lt;Box&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>gameId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/GameId.html" target="_self" >GameId</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jails</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Jail.html" target="_self" >Array&lt;Jail&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>leaders</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Box.html" target="_self" >Array&lt;Array&lt;Box&gt;&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sky</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Sky.html" target="_self" >Sky</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allLocations"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>allLocations</b></span>
+                        <a href="#allLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Locate.html" target="_self" >Map&lt;string | Locate&lt;any&gt;&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;
+    string,
+    Locate&lt;any&gt;
+  &gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/contexts/board/Board.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="boxes"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>boxes</b></span>
+                        <a href="#boxes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Box.html" target="_self" >Array&lt;Box&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/board/Board.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gameId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>gameId</b></span>
+                        <a href="#gameId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/GameId.html" target="_self" >GameId</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/contexts/board/Board.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jails"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>jails</b></span>
+                        <a href="#jails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Jail.html" target="_self" >Array&lt;Jail&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/contexts/board/Board.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leaders"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>leaders</b></span>
+                        <a href="#leaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Box.html" target="_self" >Array&lt;Array&lt;Box&gt;&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/contexts/board/Board.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sky"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>sky</b></span>
+                        <a href="#sky"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Sky.html" target="_self" >Sky</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/contexts/board/Board.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fromPrimitives"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>fromPrimitives</b></span>
+                        <a href="#fromPrimitives"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fromPrimitives(primitives: <a href="../interfaces/BoardDto.html" target="_self">BoardDto</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/contexts/board/Board.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>primitives</td>
+                                    <td>
+                                                <code><a href="../interfaces/BoardDto.html" target="_self" >BoardDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Board.html" target="_self" >Board</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toPrimitives"></a>
+                    <span class="name">
+                        <span ><b>toPrimitives</b></span>
+                        <a href="#toPrimitives"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toPrimitives()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/DomainRoot.html" target="_self" >DomainRoot</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/DomainRoot.html#source" target="_self" >DomainRoot:39</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/BoardDto.html" target="_self" >BoardDto</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DomainRoot } from &#x27;../shared/domain/DomainRoot&#x27;;
+import { ParamsOf } from &#x27;../shared/domain/ParamsOf&#x27;;
+import { BoardDto } from &#x27;./BoardDto&#x27;;
+import { Box } from &#x27;../box/domain/Box&#x27;;
+import { GameId } from &#x27;../game/domain/GameId&#x27;;
+import { Jail } from &#x27;../jail/domain/Jail&#x27;;
+import { Sky } from &#x27;../sky/domain/Sky&#x27;;
+import { Locate } from &#x27;../locate/domain/Locate&#x27;;
+
+export class Board extends DomainRoot&lt;BoardDto&gt; implements ParamsOf&lt;BoardDto&gt; {
+  public boxes: Array&lt;Box&gt;;
+  public gameId: GameId;
+  public jails: Array&lt;Jail&gt;;
+  public leaders: Array&lt;Array&lt;Box&gt;&gt;;
+  public sky: Sky;
+  public allLocations: Map&lt;string, Locate&lt;any&gt;&gt; &#x3D; new Map&lt;
+    string,
+    Locate&lt;any&gt;
+  &gt;();
+
+  constructor(
+    boxes: Array&lt;Box&gt;,
+    gameId: GameId,
+    jails: Array&lt;Jail&gt;,
+    leaders: Array&lt;Array&lt;Box&gt;&gt;,
+    sky: Sky,
+  ) {
+    super();
+    this.boxes &#x3D; boxes;
+    this.gameId &#x3D; gameId;
+    this.jails &#x3D; jails;
+    this.leaders &#x3D; leaders;
+    this.sky &#x3D; sky;
+    for (const locate of [...boxes, ...jails, sky, ...leaders.flat(1)]) {
+      this.allLocations.set(locate.locateId.toString(), locate);
+    }
+  }
+
+  toPrimitives(): BoardDto {
+    return {
+      boxes: this.boxes.map((b) &#x3D;&gt; b.toPrimitives()),
+      gameId: this.gameId.toString(),
+      jails: this.jails.map((j) &#x3D;&gt; j.toPrimitives()),
+      leaders: this.leaders.map((l) &#x3D;&gt; l.map((b) &#x3D;&gt; b.toPrimitives())),
+      sky: this.sky.toPrimitives(),
+    };
+  }
+
+  static fromPrimitives(primitives: BoardDto) {
+    return new Board(
+      primitives.boxes.map(Box.fromPrimitives),
+      new GameId(primitives.gameId),
+      primitives.jails.map(Jail.fromPrimitives),
+      primitives.leaders.map((j) &#x3D;&gt; j.map(Box.fromPrimitives)),
+      Sky.fromPrimitives(primitives.sky),
+    );
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Board.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
