@@ -1,0 +1,97 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parqués</title>
+    <link rel="stylesheet" href="../css/board.css"></link>
+</head>
+<body onresize="calculateNextPoint(document.getElementById('players'))">
+<input type="number" id="players" min="3" max="8" onchange="createBoard(this)">
+<svg style="width: 98vw; max-width: 98vh; height: 98vw; max-height: 98vh" id="board">
+</svg>
+<!--<div id="board">
+
+    <div class="player-part" style = "&#45;&#45; color:red"> 
+        <div class="board-side"> 
+            <div class="escalera"> 
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla seguro"></div>
+            </div>
+            <div class="lateral">
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla seguro salida"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+            </div>
+        </div>
+        <div class="board-side payer-part-2" style="transform: rotate(-90deg)">
+            <div class="carcel">
+            </div>
+            <div class="lateral">
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla seguro"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+           </div>
+       </div>
+   </div>
+   <div class="player-part" style="&#45;&#45;color:blue; transform: rotate(-72deg) ">
+       <div class="board-side">
+           <div class="escalera">
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla seguro"></div>
+           </div>
+           <div class="lateral">
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla seguro salida"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+               <div class="casilla"></div>
+           </div>
+       </div>
+       <div class="board-side payer-part-2" style="transform: rotate(-90deg)">
+           <div class="carcel">
+            </div>
+            <div class="lateral">
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla seguro"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<script src="../Script/board.js"></script>
+</body>
+</html>

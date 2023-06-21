@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+.container {
+    display: flex;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  }
+  
+  .tablero {
+    background-color: rgb(22, 161, 96);
+    flex-basis: 66.66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tablero h1 {
+    color: white;
+  }
+  
+  .restante {
+    flex-basis: 33.33%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Dados {
+    flex-basis: 60%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Botones{
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .botones button {
+    background-color: gray;
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 50px auto 0;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 10px
+  }
