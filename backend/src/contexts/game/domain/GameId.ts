@@ -7,7 +7,7 @@ export class GameId extends IdObject {
     let value;
     do {
       value = uuidv4();
-    } while (Game.games.find((x) => x.gameId.toString() === value));
+    } while (Game.games.has(value));
     return new GameId(value);
   }
 }

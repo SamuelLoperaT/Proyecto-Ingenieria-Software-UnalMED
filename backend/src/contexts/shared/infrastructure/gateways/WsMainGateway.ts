@@ -1,5 +1,5 @@
 import { WebSocketServer } from '@nestjs/websockets';
-import { Server, Socket } from 'socket.io';
+import { Server } from 'socket.io';
 import { Logger } from '@nestjs/common';
 import { ApiSocketGateway } from './ApiSocketGateway';
 import { WsServerDecorator } from './WsServerDecorator';
@@ -55,7 +55,10 @@ export class WsMainGateway
     this.logger.log(`[${this.emitToClient.name}] FINISH`);
   }
 
-  async removeClientFromRoom(clientId: string, roomName: string): Promise<void> {
+  async removeClientFromRoom(
+    clientId: string,
+    roomName: string,
+  ): Promise<void> {
     this.logger.log(
       `[${this.addClientToRoom.name}] INIT - ${JSON.stringify({
         clientId,

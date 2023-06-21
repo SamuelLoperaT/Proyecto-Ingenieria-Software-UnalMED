@@ -5,7 +5,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { Socket } from 'socket.io';
-import { CryptoUtils } from '../infrastructure/crypt-ts/CryptoUtils';
+import { CryptoUtils } from '../infrastructure/crypto-js/CryptoUtils';
 
 @Injectable()
 export class GeneralGuard implements CanActivate {

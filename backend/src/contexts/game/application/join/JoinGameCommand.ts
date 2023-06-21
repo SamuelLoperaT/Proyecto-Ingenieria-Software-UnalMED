@@ -1,6 +1,7 @@
 export class JoinGameCommand {
   constructor(
-    public readonly clientId: string,
+    public readonly playerId: string,
     public readonly gameId: string,
+    public readonly clientId: string,
   ) {}
 }

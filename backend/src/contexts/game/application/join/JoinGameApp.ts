@@ -6,6 +6,8 @@ import { GameId } from '../../domain/GameId';
 import { Player } from '../../../players/domain/Player';
 import { GameMessagesConstants } from '../../domain/GameMessagesConstants';
 import { GameMessagesDataConfig } from '../../domain/GameMessagesData';
+import { ClientId } from '../../../players/domain/ClientId';
+import { PlayerStatusConstants } from '../../../players/domain/PlayerStatusConstants';
 
 export class JoinGameApp {
   private logger: Logger = new Logger(JoinGameApp.name);
@@ -14,22 +16,34 @@ export class JoinGameApp {
     private readonly socketManager: IWsRepository<GameMessagesDataConfig>,
   ) {}
 
-  async execute(playerId: PlayerId, gameId: GameId) {
+  async execute(playerId: PlayerId, gameId: GameId, clientId: ClientId) {
     this.logger.log(`[${this.execute.name}] INIT`);
-    const game = Game.games.find(
-      (g) => g.gameId.toString() === gameId.toString(),
-    );
+    const game = Game.games.get(gameId.toString());
     if (!game) {
       throw new Error('GAME NOT FOUND');
     }
     if (
-      Game.games.some((g) =>
+      new Array(...Game.games.values()).some((g) =>
         g.players.some((p) => p.playerId.toString() === playerId.toString()),
       )
     ) {
       throw new Error('PLAYER ALREADY IN GAME');
     }
-    game.players.push(Player.fromPrimitives({ playerId: playerId.toString() }));
+    game.players.push(
+      Player.fromPrimitives({
+        catchCount: 0,
+        clientId: clientId.toString(),
+        color: undefined,
+        host: false,
+        ladder: [],
+        penalties: 0,
+        status: PlayerStatusConstants.INACTIVE,
+        tabs: [],
+        tabsAvailable: 0,
+        playerId: playerId.toString(),
+        lastTabsMoved: [],
+      }),
+    );
     await this.socketManager.addClientToRoom(
       playerId.toString(),
       game.gameId.toString(),

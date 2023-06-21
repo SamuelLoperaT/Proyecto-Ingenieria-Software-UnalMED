@@ -1,4 +1,8 @@
-import { ConnectedSocket, MessageBody, SubscribeMessage } from "@nestjs/websockets";
+import {
+  ConnectedSocket,
+  MessageBody,
+  SubscribeMessage,
+} from '@nestjs/websockets';
 import {
   HttpStatus,
   Logger,
@@ -11,7 +15,7 @@ import { Socket } from 'socket.io';
 import { WsExceptionFilter } from '../../../../../contexts/shared/infrastructure/gateways/WsExceptionFilter';
 import { GeneralGuard } from '../../../../../contexts/shared/application/GeneralGuard';
 import { WsServerDecorator } from '../../../../../contexts/shared/infrastructure/gateways/WsServerDecorator';
-import { CqrsBase } from '../../../../../contexts/players/domain/CqrsBase';
+import { CqrsBase } from '../../../../../contexts/shared/domain/CqrsBase';
 import { JoinGameCommand } from '../../../../../contexts/game/application/join/JoinGameCommand';
 import { JoinGameGatewayRequest } from './JoinGameGatewayRequest';
 
@@ -34,7 +38,9 @@ export class JoinGameGateway extends CqrsBase {
     @MessageBody() data: JoinGameGatewayRequest,
   ) {
     this.logger.log(`${this.execute.name} Init client:: ${client.id}`);
-    await this.dispatch(new JoinGameCommand(client.id, data.gameId));
+    await this.dispatch(
+      new JoinGameCommand(data.playerId, data.gameId, client.id),
+    );
     this.logger.log(`${this.execute.name} Finish`);
   }
 }
