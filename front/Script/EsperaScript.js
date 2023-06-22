@@ -76,7 +76,7 @@ const startButtom = document.getElementById("startButton");
 startButtom.addEventListener("click", () => {
   // Redireccionar a la página principal
   //TODO: Cambiar redireccionamiento
-  window.location.href = "../html/board.html" ; //AQUI VA EL ARCHIVO DEL TABLERO
+  window.location.href = "../Tablero/tablero.html" ; //AQUI VA EL ARCHIVO DEL TABLERO
 });
 
 // Obtener referencia al botón de "Volver al Menú de configuraciones"
