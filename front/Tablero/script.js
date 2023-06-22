@@ -25,3 +25,8 @@ function roll(){
     );
 }
 roll();
+LanzarDados.addEventListener("click", () => {
+    // Redireccionar a la página principal
+    //TODO: Cambiar redireccionamiento
+    window.location.href = "../html/principal.html" ; //AQUI VA EL ARCHIVO DEL TABLERO "../html/board.html"
+  });
