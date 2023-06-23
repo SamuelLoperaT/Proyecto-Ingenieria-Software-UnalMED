@@ -59,7 +59,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                             </li>
                             <li class="link">
+                                <a href="modules/DiceModule.html" data-type="entity-link" >DiceModule</a>
+                            </li>
+                            <li class="link">
                                 <a href="modules/GameModule.html" data-type="entity-link" >GameModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/PlayerModule.html" data-type="entity-link" >PlayerModule</a>
                             </li>
                             <li class="link">
                                 <a href="modules/WsModule.html" data-type="entity-link" >WsModule</a>
@@ -87,6 +93,33 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/BoxType.html" data-type="entity-link" >BoxType</a>
                             </li>
                             <li class="link">
+                                <a href="classes/ChangeColorPlayerCommand.html" data-type="entity-link" >ChangeColorPlayerCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeColorPlayerGateway.html" data-type="entity-link" >ChangeColorPlayerGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeColorPlayerGatewayRequest.html" data-type="entity-link" >ChangeColorPlayerGatewayRequest</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeModeGameCommand.html" data-type="entity-link" >ChangeModeGameCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeModeGameGateway.html" data-type="entity-link" >ChangeModeGameGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeModeGameGatewayRequest.html" data-type="entity-link" >ChangeModeGameGatewayRequest</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeNumberOfDicesCommand.html" data-type="entity-link" >ChangeNumberOfDicesCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeNumberOfDicesGameGateway.html" data-type="entity-link" >ChangeNumberOfDicesGameGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ChangeNumberOfDicesGatewayRequest.html" data-type="entity-link" >ChangeNumberOfDicesGatewayRequest</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/ClientId.html" data-type="entity-link" >ClientId</a>
                             </li>
                             <li class="link">
@@ -94,9 +127,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/CreateGameApp.html" data-type="entity-link" >CreateGameApp</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/CreateGameCommand.html" data-type="entity-link" >CreateGameCommand</a>
                             </li>
                             <li class="link">
                                 <a href="classes/CreateGameCommandHandler.html" data-type="entity-link" >CreateGameCommandHandler</a>
@@ -127,6 +157,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/GameStatus.html" data-type="entity-link" >GameStatus</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/GameType.html" data-type="entity-link" >GameType</a>
                             </li>
                             <li class="link">
                                 <a href="classes/IdObject.html" data-type="entity-link" >IdObject</a>
@@ -165,6 +198,27 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/PlayerId.html" data-type="entity-link" >PlayerId</a>
                             </li>
                             <li class="link">
+                                <a href="classes/PlayerLeaveApp.html" data-type="entity-link" >PlayerLeaveApp</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PlayerLeaveCommand.html" data-type="entity-link" >PlayerLeaveCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PlayerLeaveCommandHandler.html" data-type="entity-link" >PlayerLeaveCommandHandler</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PlayerLeaveGateway.html" data-type="entity-link" >PlayerLeaveGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PlayerRejoinCommand.html" data-type="entity-link" >PlayerRejoinCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PlayerRejoinGateway.html" data-type="entity-link" >PlayerRejoinGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PlayerRejoinGatewayRequest.html" data-type="entity-link" >PlayerRejoinGatewayRequest</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/PlayerStatus.html" data-type="entity-link" >PlayerStatus</a>
                             </li>
                             <li class="link">
@@ -175,6 +229,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/Tab.html" data-type="entity-link" >Tab</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ThrowDicesCommand.html" data-type="entity-link" >ThrowDicesCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ThrowDicesGateway.html" data-type="entity-link" >ThrowDicesGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ThrowDicesGateway-1.html" data-type="entity-link" >ThrowDicesGateway</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ThrowDicesGatewayRequest.html" data-type="entity-link" >ThrowDicesGatewayRequest</a>
                             </li>
                             <li class="link">
                                 <a href="classes/WsExceptionFilter.html" data-type="entity-link" >WsExceptionFilter</a>

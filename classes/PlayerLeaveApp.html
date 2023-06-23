@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >CreateGameCommandHandler</li>
+  <li class="breadcrumb-item" >PlayerLeaveApp</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,18 +68,12 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/contexts/game/application/create/CreateGameCommandHandler.ts</code>
+            <code>src/contexts/players/application/player-leave/PlayerLeaveApp.ts</code>
         </p>
 
 
 
 
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                        <code>ICommandHandler</code>
-            </p>
 
 
             <section data-compodoc="block-index">
@@ -132,12 +126,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(createGameApp: <a href="../classes/CreateGameApp.html" target="_self">CreateGameApp</a>)</code>
+<code>constructor(socketManager: <a href="../interfaces/IWsRepository.html" target="_self">IWsRepository&lt;GameMessagesDataConfig&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/contexts/game/application/create/CreateGameCommandHandler.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/players/application/player-leave/PlayerLeaveApp.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -155,10 +149,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>createGameApp</td>
+                                                        <td>socketManager</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/CreateGameApp.html" target="_self" >CreateGameApp</a></code>
+                                                                        <code><a href="../interfaces/IWsRepository.html" target="_self" >IWsRepository&lt;GameMessagesDataConfig&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -200,12 +194,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Logger(CreateGameCommandHandler.name)</code>
+                        <i>Default value : </i><code>new Logger(PlayerLeaveApp.name)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/contexts/game/application/create/CreateGameCommandHandler.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/players/application/player-leave/PlayerLeaveApp.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -234,15 +228,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>execute(command: <a href="../classes/ThrowDicesGateway.html" target="_self">ThrowDicesGateway</a>)</code>
+                    <code>execute(clientId: <a href="../classes/ClientId.html" target="_self">ClientId</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/contexts/game/application/create/CreateGameCommandHandler.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/contexts/players/application/player-leave/PlayerLeaveApp.ts:17</a></div>
                 </td>
             </tr>
 
@@ -263,9 +257,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>command</td>
+                                    <td>clientId</td>
                                     <td>
-                                                <code><a href="../classes/ThrowDicesGateway.html" target="_self" >ThrowDicesGateway</a></code>
+                                                <code><a href="../classes/ClientId.html" target="_self" >ClientId</a></code>
                                     </td>
 
                                     <td>
@@ -300,28 +294,66 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ThrowDicesGateway } from &#x27;./ThrowDicesGateway&#x27;;
-import { CommandHandler, ICommandHandler } from &#x27;@nestjs/cqrs&#x27;;
-import { Logger } from &#x27;@nestjs/common&#x27;;
-import { CreateGameApp } from &#x27;./CreateGameApp&#x27;;
-import { PlayerId } from &#x27;../../../players/domain/PlayerId&#x27;;
-import { ClientId } from &#x27;../../../players/domain/ClientId&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Logger } from &#x27;@nestjs/common&#x27;;
+import { ClientId } from &#x27;../../domain/ClientId&#x27;;
+import { Game } from &#x27;../../../game/domain/Game&#x27;;
+import { GameStatusConstants } from &#x27;../../../game/domain/GameStatusConstants&#x27;;
+import { IWsRepository } from &#x27;../../../shared/domain/IWsRepository&#x27;;
+import { GameMessagesDataConfig } from &#x27;../../../game/domain/GameMessagesData&#x27;;
+import { GameMessagesConstants } from &#x27;../../../game/domain/GameMessagesConstants&#x27;;
+import { Player } from &#x27;../../domain/Player&#x27;;
 
-@CommandHandler(ThrowDicesGateway)
-export class CreateGameCommandHandler
-  implements ICommandHandler&lt;ThrowDicesGateway&gt;
-{
-  private logger: Logger &#x3D; new Logger(CreateGameCommandHandler.name);
+export class PlayerLeaveApp {
+  private logger: Logger &#x3D; new Logger(PlayerLeaveApp.name);
 
-  constructor(private readonly createGameApp: CreateGameApp) {}
+  constructor(
+    private readonly socketManager: IWsRepository&lt;GameMessagesDataConfig&gt;,
+  ) {}
 
-  async execute(command: ThrowDicesGateway): Promise&lt;void&gt; {
+  async execute(clientId: ClientId): Promise&lt;void&gt; {
     this.logger.log(&#x60;[${this.execute.name}] INIT&#x60;);
-    await this.createGameApp.execute(
-      new PlayerId(command.playerId),
-      new ClientId(command.clientId),
-    );
-    this.logger.log(&#x60;[${this.execute.name}] FINISH&#x60;);
+    let player: Player;
+    const game &#x3D; new Array(...Game.games.values()).find((g) &#x3D;&gt; {
+      player &#x3D; g.players.find(
+        (p) &#x3D;&gt; p.clientId.toString() &#x3D;&#x3D;&#x3D; clientId.toString(),
+      );
+      return !!player;
+    });
+    if (!game) {
+      return;
+    }
+    player.online &#x3D; false;
+    let callback: () &#x3D;&gt; void;
+    switch (game.status.toString() as GameStatusConstants) {
+      case GameStatusConstants.PENDING:
+        callback &#x3D; async () &#x3D;&gt; {
+          if (!player.online) {
+            game.availableColors.push(player.color);
+            game.players.splice(
+              game.players.findIndex(
+                (p) &#x3D;&gt; p.playerId.toString() &#x3D;&#x3D; player.playerId.toString(),
+              ),
+            );
+            await this.socketManager.emitToRoom(
+              game.gameId.toString(),
+              GameMessagesConstants.USER_LEAVE,
+              game.toPrimitives(),
+            );
+          }
+        };
+        break;
+      case GameStatusConstants.IN_PROGRESS:
+        //TODO
+        break;
+      case GameStatusConstants.FINISHED:
+        //TODO
+        break;
+    }
+    if (callback) {
+      setTimeout(callback, 5000);
+    }
+    this.logger.log(&#x60;[${this.execute.name}]
+                    FINISH&#x60;);
   }
 }
 </code></pre>
@@ -362,7 +394,7 @@ export class CreateGameCommandHandler
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'CreateGameCommandHandler.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlayerLeaveApp.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

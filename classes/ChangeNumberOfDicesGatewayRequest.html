@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >GameMessagesDataConfig</li>
+  <li class="breadcrumb-item" >ChangeNumberOfDicesGatewayRequest</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,18 +68,12 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/contexts/game/domain/GameMessagesData.ts</code>
+            <code>src/apps/wsServer/dice/gateways/change-mode-game/ChangeNumberOfDicesGatewayRequest.ts</code>
         </p>
 
 
 
 
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                        <code>Required</code>
-            </p>
 
 
             <section data-compodoc="block-index">
@@ -95,13 +89,21 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#GAME_CREATED" >GAME_CREATED</a>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#gameId" >gameId</a>
                             </li>
                             <li>
-                                <a href="#USER_JOINED" >USER_JOINED</a>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#numberOfDices" >numberOfDices</a>
                             </li>
                             <li>
-                                <a href="#USER_LEAVE" >USER_LEAVE</a>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#playerId" >playerId</a>
                             </li>
                         </ul>
                     </td>
@@ -126,22 +128,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="GAME_CREATED"></a>
+                    <a name="gameId"></a>
                     <span class="name">
-                        <span ><b>GAME_CREATED</b></span>
-                        <a href="#GAME_CREATED"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>gameId</b></span>
+                        <a href="#gameId"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/GameDto.html" target="_self" >GameDto</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @IsUUID(4, {message: &#x27;game id format not valid&#x27;})<br />@IsString({message: &#x27;game id must be a string&#x27;})<br />@IsNotEmpty({message: &#x27;game id is required&#x27;})<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/contexts/game/domain/GameMessagesData.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/apps/wsServer/dice/gateways/change-mode-game/ChangeNumberOfDicesGatewayRequest.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -152,22 +166,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="USER_JOINED"></a>
+                    <a name="numberOfDices"></a>
                     <span class="name">
-                        <span ><b>USER_JOINED</b></span>
-                        <a href="#USER_JOINED"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>numberOfDices</b></span>
+                        <a href="#numberOfDices"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/GameDto.html" target="_self" >GameDto</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @IsNumber({allowNaN: false, allowInfinity: false}, {message: &#x27;number of dices must be a number&#x27;})<br />@IsNotEmpty({message: &#x27;number of dices is required&#x27;})<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/contexts/game/domain/GameMessagesData.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/apps/wsServer/dice/gateways/change-mode-game/ChangeNumberOfDicesGatewayRequest.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -178,22 +203,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="USER_LEAVE"></a>
+                    <a name="playerId"></a>
                     <span class="name">
-                        <span ><b>USER_LEAVE</b></span>
-                        <a href="#USER_LEAVE"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>playerId</b></span>
+                        <a href="#playerId"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/GameDto.html" target="_self" >GameDto</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @IsUUID(4, {message: &#x27;player id format not valid&#x27;})<br />@IsString({message: &#x27;player id must be a string&#x27;})<br />@IsNotEmpty({message: &#x27;player id is required&#x27;})<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/contexts/game/domain/GameMessagesData.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/apps/wsServer/dice/gateways/change-mode-game/ChangeNumberOfDicesGatewayRequest.ts:7</a></div>
                         </td>
                     </tr>
 
@@ -212,21 +249,28 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GameMessagesConstants } from &#x27;./GameMessagesConstants&#x27;;
-import { GameDto } from &#x27;./GameDto&#x27;;
-import { MessagesData } from &#x27;../../shared/domain/MessagesData&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IsNotEmpty, IsNumber, IsString, IsUUID } from &#x27;class-validator&#x27;;
 
-export type GameMessagesData&lt;T extends GameMessagesConstants&gt; &#x3D; MessagesData&lt;
-  GameMessagesDataConfig,
-  T
-&gt;;
+export class ChangeNumberOfDicesGatewayRequest {
+  @IsUUID(4, { message: &#x27;player id format not valid&#x27; })
+  @IsString({ message: &#x27;player id must be a string&#x27; })
+  @IsNotEmpty({ message: &#x27;player id is required&#x27; })
+  playerId: string;
 
-export class GameMessagesDataConfig
-  implements Required&lt;Record&lt;GameMessagesConstants, any&gt;&gt;
-{
-  USER_LEAVE: GameDto;
-  GAME_CREATED: GameDto;
-  USER_JOINED: GameDto;
+  @IsUUID(4, { message: &#x27;game id format not valid&#x27; })
+  @IsString({ message: &#x27;game id must be a string&#x27; })
+  @IsNotEmpty({ message: &#x27;game id is required&#x27; })
+  gameId: string;
+
+  @IsNumber(
+    {
+      allowNaN: false,
+      allowInfinity: false,
+    },
+    { message: &#x27;number of dices must be a number&#x27; },
+  )
+  @IsNotEmpty({ message: &#x27;number of dices is required&#x27; })
+  numberOfDices: number;
 }
 </code></pre>
     </div>
@@ -266,7 +310,7 @@ export class GameMessagesDataConfig
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'GameMessagesDataConfig.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChangeNumberOfDicesGatewayRequest.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

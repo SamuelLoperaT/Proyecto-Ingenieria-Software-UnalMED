@@ -132,6 +132,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#online" >online</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                     <span class="modifier">Readonly</span>
                                 <a href="#penalties" >penalties</a>
                             </li>
@@ -197,7 +201,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/contexts/players/domain/Player.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/contexts/players/domain/Player.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -532,6 +536,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="online"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>online</b></span>
+                        <a href="#online"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/contexts/players/domain/Player.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="penalties"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -697,8 +727,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/contexts/players/domain/Player.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/contexts/players/domain/Player.ts:56</a></div>
                 </td>
             </tr>
 
@@ -772,7 +802,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/DomainRoot.html#source" target="_self" >DomainRoot:71</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/DomainRoot.html#source" target="_self" >DomainRoot:72</a></code>
 </div>
                 </td>
             </tr>
@@ -825,6 +855,7 @@ export class Player
   public readonly lastTabsMoved: Array&lt;Tab&gt;;
   public readonly tabsAvailable: number;
   public readonly playerId: PlayerId;
+  public online &#x3D; true;
 
   constructor(
     catchCount: number,

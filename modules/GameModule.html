@@ -159,6 +159,7 @@ import { CreateGameAppProvider, JoinGameAppProvider } from &#x27;./config/Provid
 import { CqrsModule } from &#x27;@nestjs/cqrs&#x27;;
 import { JoinGameCommandHandler } from &#x27;../../../contexts/game/application/join/JoinGameCommandHandler&#x27;;
 import { JoinGameGateway } from &#x27;./gateways/join-game/JoinGameGateway&#x27;;
+import { ChangeModeGameGateway } from &#x27;./gateways/change-mode-game/ChangeModeGameGateway&#x27;;
 
 const commandHandlers &#x3D; [CreateGameCommandHandler, JoinGameCommandHandler];
 
@@ -168,6 +169,7 @@ const commandHandlers &#x3D; [CreateGameCommandHandler, JoinGameCommandHandler];
     ...commandHandlers,
     CreateGameGateway,
     JoinGameGateway,
+    ChangeModeGameGateway,
     JoinGameAppProvider,
     CreateGameAppProvider,
   ],

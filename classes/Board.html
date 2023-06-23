@@ -68,7 +68,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/contexts/board/Board.ts</code>
+            <code>src/contexts/board/domain/Board.ts</code>
         </p>
 
 
@@ -166,7 +166,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/contexts/board/Board.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/contexts/board/domain/Board.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -285,7 +285,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/contexts/board/Board.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/contexts/board/domain/Board.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -312,7 +312,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/board/Board.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/board/domain/Board.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -339,7 +339,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/contexts/board/Board.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/contexts/board/domain/Board.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -366,7 +366,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/contexts/board/Board.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/contexts/board/domain/Board.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -393,7 +393,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/contexts/board/Board.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/contexts/board/domain/Board.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -420,7 +420,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/contexts/board/Board.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/contexts/board/domain/Board.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -457,7 +457,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/contexts/board/Board.ts:49</a></div>
+                            class="link-to-prism">src/contexts/board/domain/Board.ts:49</a></div>
                 </td>
             </tr>
 
@@ -558,14 +558,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DomainRoot } from &#x27;../shared/domain/DomainRoot&#x27;;
-import { ParamsOf } from &#x27;../shared/domain/ParamsOf&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DomainRoot } from &#x27;../../shared/domain/DomainRoot&#x27;;
+import { ParamsOf } from &#x27;../../shared/domain/ParamsOf&#x27;;
 import { BoardDto } from &#x27;./BoardDto&#x27;;
-import { Box } from &#x27;../box/domain/Box&#x27;;
-import { GameId } from &#x27;../game/domain/GameId&#x27;;
-import { Jail } from &#x27;../jail/domain/Jail&#x27;;
-import { Sky } from &#x27;../sky/domain/Sky&#x27;;
-import { Locate } from &#x27;../locate/domain/Locate&#x27;;
+import { Box } from &#x27;../../box/domain/Box&#x27;;
+import { GameId } from &#x27;../../game/domain/GameId&#x27;;
+import { Jail } from &#x27;../../jail/domain/Jail&#x27;;
+import { Sky } from &#x27;../../sky/domain/Sky&#x27;;
+import { Locate } from &#x27;../../locate/domain/Locate&#x27;;
 
 export class Board extends DomainRoot&lt;BoardDto&gt; implements ParamsOf&lt;BoardDto&gt; {
   public boxes: Array&lt;Box&gt;;

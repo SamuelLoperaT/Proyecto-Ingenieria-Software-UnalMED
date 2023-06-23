@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >LocateId</li>
+  <li class="breadcrumb-item" >GameType</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,7 +68,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/contexts/locate/domain/LocateId.ts</code>
+            <code>src/contexts/game/domain/GameType.ts</code>
         </p>
 
 
@@ -77,7 +77,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                        <code><a href="../classes/IdObject.html" target="_self" >IdObject</a></code>
+                        <code><a href="../classes/StringValueObject.html" target="_self" >StringValueObject</a></code>
             </p>
 
 
@@ -97,7 +97,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Static</span>
-                                <a href="#generate" >generate</a>
+                                <a href="#ensureIsValidParam" >ensureIsValidParam</a>
                             </li>
                             <li>
                                 <a href="#setValue" >setValue</a>
@@ -117,6 +117,54 @@
     </table>
 </section>
 
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/contexts/game/domain/GameType.ts:4</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
             <section data-compodoc="block-methods">
@@ -128,26 +176,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="generate"></a>
+                    <a name="ensureIsValidParam"></a>
                     <span class="name">
                         <span class="modifier">Static</span>
-                        <span ><b>generate</b></span>
-                        <a href="#generate"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ensureIsValidParam</b></span>
+                        <a href="#ensureIsValidParam"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>generate(board?: <a href="../classes/Board.html" target="_self">Board</a>)</code>
+                    <code>ensureIsValidParam(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="6"
-                            class="link-to-prism">src/contexts/locate/domain/LocateId.ts:6</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/contexts/game/domain/GameType.ts:10</a></div>
                 </td>
             </tr>
 
@@ -168,13 +216,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>board</td>
+                                    <td>value</td>
                                     <td>
-                                                <code><a href="../classes/Board.html" target="_self" >Board</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
-                                        Yes
+                                        No
                                     </td>
 
 
@@ -185,7 +233,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/LocateId.html" target="_self" >LocateId</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -323,17 +371,19 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IdObject } from &#x27;../../shared/domain/IdObject&#x27;;
-import { v4 as uuidv4 } from &#x27;uuid&#x27;;
-import { Board } from &#x27;../../board/domain/Board&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { StringValueObject } from &#x27;../../shared/domain/StringValueObject&#x27;;
+import { GameTypesConstants } from &#x27;./GameTypesConstants&#x27;;
 
-export class LocateId extends IdObject {
-  static generate(board?: Board): LocateId {
-    let value;
-    do {
-      value &#x3D; uuidv4();
-    } while (board &amp;&amp; board.allLocations.has(value));
-    return new LocateId(value);
+export class GameType extends StringValueObject {
+  constructor(value: string) {
+    GameType.ensureIsValidParam(value);
+    super(value);
+  }
+
+  static ensureIsValidParam(value: string) {
+    if (!(Object.values(GameTypesConstants) as Array&lt;string&gt;).includes(value)) {
+      throw new Error(&#x27;Invalid game status&#x27;);
+    }
   }
 }
 </code></pre>
@@ -374,7 +424,7 @@ export class LocateId extends IdObject {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'LocateId.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'GameType.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

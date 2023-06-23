@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >CreateGameGateway</li>
+  <li class="breadcrumb-item" >ChangeColorPlayerGateway</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,7 +68,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts</code>
+            <code>src/apps/wsServer/player/gateways/change-color-player/ChangeColorPlayerGateway.ts</code>
         </p>
 
 
@@ -172,12 +172,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Logger(CreateGameGateway.name)</code>
+                        <i>Default value : </i><code>new Logger(ChangeColorPlayerGateway.name)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/apps/wsServer/player/gateways/change-color-player/ChangeColorPlayerGateway.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -206,12 +206,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;CREATE_GAME&#x27;</code>
+                        <i>Default value : </i><code>&#x27;CHANGE_COLOR_PLAYER&#x27;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/apps/wsServer/player/gateways/change-color-player/ChangeColorPlayerGateway.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -244,7 +244,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>execute(client: Socket, data: <a href="../classes/CreateGameGatewayRequest.html" target="_self">CreateGameGatewayRequest</a>)</code>
+                    <code>execute(client: Socket, data: <a href="../classes/ChangeColorPlayerGatewayRequest.html" target="_self">ChangeColorPlayerGatewayRequest</a>)</code>
                 </td>
             </tr>
 
@@ -252,14 +252,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@SubscribeMessage(CreateGameGateway.MESSAGE)<br />@UseFilters(WsExceptionFilter)<br />@UseGuards(GeneralGuard)<br />@UsePipes(new ValidationPipe())<br /></code>
+                    <code>@SubscribeMessage(ChangeColorPlayerGateway.MESSAGE)<br />@UseFilters(WsExceptionFilter)<br />@UseGuards(GeneralGuard)<br />@UsePipes(new ValidationPipe())<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts:36</a></div>
+                            class="link-to-prism">src/apps/wsServer/player/gateways/change-color-player/ChangeColorPlayerGateway.ts:36</a></div>
                 </td>
             </tr>
 
@@ -294,7 +294,7 @@
                                 <tr>
                                     <td>data</td>
                                     <td>
-                                                <code><a href="../classes/CreateGameGatewayRequest.html" target="_self" >CreateGameGatewayRequest</a></code>
+                                                <code><a href="../classes/ChangeColorPlayerGatewayRequest.html" target="_self" >ChangeColorPlayerGatewayRequest</a></code>
                                     </td>
 
                                     <td>
@@ -495,15 +495,15 @@ import { WsExceptionFilter } from &#x27;../../../../../contexts/shared/infrastru
 import { GeneralGuard } from &#x27;../../../../../contexts/shared/application/GeneralGuard&#x27;;
 import { WsServerDecorator } from &#x27;../../../../../contexts/shared/infrastructure/gateways/WsServerDecorator&#x27;;
 import { CqrsBase } from &#x27;../../../../../contexts/shared/domain/CqrsBase&#x27;;
-import { ThrowDicesGateway } from &#x27;../../../../../contexts/game/application/create/ThrowDicesGateway&#x27;;
-import { CreateGameGatewayRequest } from &#x27;./CreateGameGatewayRequest&#x27;;
+import { ChangeColorPlayerGatewayRequest } from &#x27;./ChangeColorPlayerGatewayRequest&#x27;;
+import { ChangeColorPlayerCommand } from &#x27;../../../../../contexts/game/application/change-color-player/ChangeColorPlayerCommand&#x27;;
 
 @WsServerDecorator()
-export class CreateGameGateway extends CqrsBase {
-  private logger: Logger &#x3D; new Logger(CreateGameGateway.name);
-  private static readonly MESSAGE &#x3D; &#x27;CREATE_GAME&#x27;;
+export class ChangeColorPlayerGateway extends CqrsBase {
+  private logger: Logger &#x3D; new Logger(ChangeColorPlayerGateway.name);
+  private static readonly MESSAGE &#x3D; &#x27;CHANGE_COLOR_PLAYER&#x27;;
 
-  @SubscribeMessage(CreateGameGateway.MESSAGE)
+  @SubscribeMessage(ChangeColorPlayerGateway.MESSAGE)
   @UseFilters(WsExceptionFilter)
   @UseGuards(GeneralGuard)
   @UsePipes(
@@ -514,10 +514,17 @@ export class CreateGameGateway extends CqrsBase {
   )
   async execute(
     @ConnectedSocket() client: Socket,
-    @MessageBody() data: CreateGameGatewayRequest,
+    @MessageBody() data: ChangeColorPlayerGatewayRequest,
   ) {
     this.logger.log(&#x60;${this.execute.name} Init client:: ${data.playerId}&#x60;);
-    await this.dispatch(new ThrowDicesGateway(data.playerId, client.id));
+    await this.dispatch(
+      new ChangeColorPlayerCommand(
+        data.playerId,
+        data.gameId,
+        client.id,
+        data.color,
+      ),
+    );
     this.logger.log(&#x60;${this.execute.name} Finish&#x60;);
   }
 }
@@ -559,7 +566,7 @@ export class CreateGameGateway extends CqrsBase {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'CreateGameGateway.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChangeColorPlayerGateway.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

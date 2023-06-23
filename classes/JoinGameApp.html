@@ -131,7 +131,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/contexts/game/application/join/JoinGameApp.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/contexts/game/application/join/JoinGameApp.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -199,7 +199,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/contexts/game/application/join/JoinGameApp.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/contexts/game/application/join/JoinGameApp.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -235,8 +235,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/contexts/game/application/join/JoinGameApp.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/contexts/game/application/join/JoinGameApp.ts:20</a></div>
                 </td>
             </tr>
 
@@ -328,6 +328,7 @@ import { GameMessagesConstants } from &#x27;../../domain/GameMessagesConstants&#
 import { GameMessagesDataConfig } from &#x27;../../domain/GameMessagesData&#x27;;
 import { ClientId } from &#x27;../../../players/domain/ClientId&#x27;;
 import { PlayerStatusConstants } from &#x27;../../../players/domain/PlayerStatusConstants&#x27;;
+import { ColorConstants } from &#x27;../../../shared/domain/ColorConstants&#x27;;
 
 export class JoinGameApp {
   private logger: Logger &#x3D; new Logger(JoinGameApp.name);
@@ -349,11 +350,15 @@ export class JoinGameApp {
     ) {
       throw new Error(&#x27;PLAYER ALREADY IN GAME&#x27;);
     }
+    const selectedColor &#x3D; game.availableColors.splice(
+      Math.floor(game.availableColors.length * Math.random()),
+      1,
+    );
     game.players.push(
       Player.fromPrimitives({
         catchCount: 0,
         clientId: clientId.toString(),
-        color: undefined,
+        color: selectedColor[0].toString() as ColorConstants,
         host: false,
         ladder: [],
         penalties: 0,

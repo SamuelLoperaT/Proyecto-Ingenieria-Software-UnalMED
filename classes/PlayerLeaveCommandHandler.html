@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >LocateId</li>
+  <li class="breadcrumb-item" >PlayerLeaveCommandHandler</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,24 +68,40 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/contexts/locate/domain/LocateId.ts</code>
+            <code>src/contexts/players/application/player-leave/PlayerLeaveCommandHandler.ts</code>
         </p>
 
 
 
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                        <code><a href="../classes/IdObject.html" target="_self" >IdObject</a></code>
-            </p>
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>ICommandHandler</code>
+            </p>
 
 
             <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -96,14 +112,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#generate" >generate</a>
-                            </li>
-                            <li>
-                                <a href="#setValue" >setValue</a>
-                            </li>
-                            <li>
-                                <a href="#toString" >toString</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#execute" >execute</a>
                             </li>
                         </ul>
                     </td>
@@ -117,7 +127,94 @@
     </table>
 </section>
 
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(leavePlayerApp: <a href="../classes/PlayerLeaveApp.html" target="_self">PlayerLeaveApp</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/players/application/player-leave/PlayerLeaveCommandHandler.ts:11</a></div>
+                            </td>
+                        </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>leavePlayerApp</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/PlayerLeaveApp.html" target="_self" >PlayerLeaveApp</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Logger</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(PlayerLeaveCommandHandler.name)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/contexts/players/application/player-leave/PlayerLeaveCommandHandler.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
             <section data-compodoc="block-methods">
     
@@ -128,101 +225,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="generate"></a>
+                    <a name="execute"></a>
                     <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>generate</b></span>
-                        <a href="#generate"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Async</span>
+                        <span ><b>execute</b></span>
+                        <a href="#execute"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>generate(board?: <a href="../classes/Board.html" target="_self">Board</a>)</code>
+                    <code>execute(command: <a href="../classes/PlayerLeaveCommand.html" target="_self">PlayerLeaveCommand</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="6"
-                            class="link-to-prism">src/contexts/locate/domain/LocateId.ts:6</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>board</td>
-                                    <td>
-                                                <code><a href="../classes/Board.html" target="_self" >Board</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/LocateId.html" target="_self" >LocateId</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="setValue"></a>
-                    <span class="name">
-                        <span ><b>setValue</b></span>
-                        <a href="#setValue"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>setValue(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/StringValueObject.html" target="_self" >StringValueObject</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/StringValueObject.html#source" target="_self" >StringValueObject:8</a></code>
-</div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/contexts/players/application/player-leave/PlayerLeaveCommandHandler.ts:15</a></div>
                 </td>
             </tr>
 
@@ -243,9 +265,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>value</td>
+                                    <td>command</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../classes/PlayerLeaveCommand.html" target="_self" >PlayerLeaveCommand</a></code>
                                     </td>
 
                                     <td>
@@ -260,54 +282,11 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="toString"></a>
-                    <span class="name">
-                        <span ><b>toString</b></span>
-                        <a href="#toString"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>toString()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/StringValueObject.html" target="_self" >StringValueObject</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/StringValueObject.html#source" target="_self" >StringValueObject:4</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
                     </div>
                 </td>
             </tr>
@@ -323,17 +302,24 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IdObject } from &#x27;../../shared/domain/IdObject&#x27;;
-import { v4 as uuidv4 } from &#x27;uuid&#x27;;
-import { Board } from &#x27;../../board/domain/Board&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommandHandler, ICommandHandler } from &#x27;@nestjs/cqrs&#x27;;
+import { PlayerLeaveCommand } from &#x27;./PlayerLeaveCommand&#x27;;
+import { Logger } from &#x27;@nestjs/common&#x27;;
+import { ClientId } from &#x27;../../domain/ClientId&#x27;;
+import { PlayerLeaveApp } from &#x27;./PlayerLeaveApp&#x27;;
 
-export class LocateId extends IdObject {
-  static generate(board?: Board): LocateId {
-    let value;
-    do {
-      value &#x3D; uuidv4();
-    } while (board &amp;&amp; board.allLocations.has(value));
-    return new LocateId(value);
+@CommandHandler(PlayerLeaveCommand)
+export class PlayerLeaveCommandHandler
+  implements ICommandHandler&lt;PlayerLeaveCommand&gt;
+{
+  private readonly logger: Logger &#x3D; new Logger(PlayerLeaveCommandHandler.name);
+
+  constructor(private readonly leavePlayerApp: PlayerLeaveApp) {}
+
+  async execute(command: PlayerLeaveCommand): Promise&lt;void&gt; {
+    this.logger.log(&#x60;[${this.execute.name}] INIT&#x60;);
+    await this.leavePlayerApp.execute(new ClientId(command.clientId));
+    this.logger.log(&#x60;[${this.execute.name}] FINISH&#x60;);
   }
 }
 </code></pre>
@@ -374,7 +360,7 @@ export class LocateId extends IdObject {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'LocateId.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlayerLeaveCommandHandler.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

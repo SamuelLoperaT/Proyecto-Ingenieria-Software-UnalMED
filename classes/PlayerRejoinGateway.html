@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >CreateGameGateway</li>
+  <li class="breadcrumb-item" >PlayerRejoinGateway</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,7 +68,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts</code>
+            <code>src/apps/wsServer/player/gateways/player-rejoin/PlayerRejoinGateway.ts</code>
         </p>
 
 
@@ -101,8 +101,7 @@
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Static</span>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#MESSAGE" >MESSAGE</a>
+                                <a href="#message" >message</a>
                             </li>
                         </ul>
                     </td>
@@ -172,12 +171,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Logger(CreateGameGateway.name)</code>
+                        <i>Default value : </i><code>new Logger(PlayerRejoinGateway.name)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/apps/wsServer/player/gateways/player-rejoin/PlayerRejoinGateway.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -188,13 +187,12 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="MESSAGE"></a>
+                    <a name="message"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
                             <span class="modifier">Static</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>MESSAGE</b></span>
-                        <a href="#MESSAGE"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>message</b></span>
+                        <a href="#message"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -206,12 +204,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;CREATE_GAME&#x27;</code>
+                        <i>Default value : </i><code>&#x27;REJOIN_GAME&#x27;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/apps/wsServer/player/gateways/player-rejoin/PlayerRejoinGateway.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -244,7 +242,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>execute(client: Socket, data: <a href="../classes/CreateGameGatewayRequest.html" target="_self">CreateGameGatewayRequest</a>)</code>
+                    <code>execute(client: Socket, data: <a href="../classes/PlayerRejoinGatewayRequest.html" target="_self">PlayerRejoinGatewayRequest</a>)</code>
                 </td>
             </tr>
 
@@ -252,14 +250,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@SubscribeMessage(CreateGameGateway.MESSAGE)<br />@UseFilters(WsExceptionFilter)<br />@UseGuards(GeneralGuard)<br />@UsePipes(new ValidationPipe())<br /></code>
+                    <code>@SubscribeMessage(PlayerRejoinGateway.message)<br />@UseFilters(WsExceptionFilter)<br />@UseGuards(GeneralGuard)<br />@UsePipes(new ValidationPipe())<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/apps/wsServer/game/gateways/create-game/CreateGameGateway.ts:36</a></div>
+                            class="link-to-prism">src/apps/wsServer/player/gateways/player-rejoin/PlayerRejoinGateway.ts:36</a></div>
                 </td>
             </tr>
 
@@ -294,7 +292,7 @@
                                 <tr>
                                     <td>data</td>
                                     <td>
-                                                <code><a href="../classes/CreateGameGatewayRequest.html" target="_self" >CreateGameGatewayRequest</a></code>
+                                                <code><a href="../classes/PlayerRejoinGatewayRequest.html" target="_self" >PlayerRejoinGatewayRequest</a></code>
                                     </td>
 
                                     <td>
@@ -491,19 +489,19 @@ import {
   ValidationPipe,
 } from &#x27;@nestjs/common&#x27;;
 import { Socket } from &#x27;socket.io&#x27;;
-import { WsExceptionFilter } from &#x27;../../../../../contexts/shared/infrastructure/gateways/WsExceptionFilter&#x27;;
-import { GeneralGuard } from &#x27;../../../../../contexts/shared/application/GeneralGuard&#x27;;
 import { WsServerDecorator } from &#x27;../../../../../contexts/shared/infrastructure/gateways/WsServerDecorator&#x27;;
 import { CqrsBase } from &#x27;../../../../../contexts/shared/domain/CqrsBase&#x27;;
-import { ThrowDicesGateway } from &#x27;../../../../../contexts/game/application/create/ThrowDicesGateway&#x27;;
-import { CreateGameGatewayRequest } from &#x27;./CreateGameGatewayRequest&#x27;;
+import { PlayerRejoinCommand } from &#x27;../../../../../contexts/players/application/player-rejoin/PlayerRejoinCommand&#x27;;
+import { WsExceptionFilter } from &#x27;../../../../../contexts/shared/infrastructure/gateways/WsExceptionFilter&#x27;;
+import { GeneralGuard } from &#x27;../../../../../contexts/shared/application/GeneralGuard&#x27;;
+import { PlayerRejoinGatewayRequest } from &#x27;./PlayerRejoinGatewayRequest&#x27;;
 
 @WsServerDecorator()
-export class CreateGameGateway extends CqrsBase {
-  private logger: Logger &#x3D; new Logger(CreateGameGateway.name);
-  private static readonly MESSAGE &#x3D; &#x27;CREATE_GAME&#x27;;
+export class PlayerRejoinGateway extends CqrsBase {
+  private static message &#x3D; &#x27;REJOIN_GAME&#x27;;
+  private logger: Logger &#x3D; new Logger(PlayerRejoinGateway.name);
 
-  @SubscribeMessage(CreateGameGateway.MESSAGE)
+  @SubscribeMessage(PlayerRejoinGateway.message)
   @UseFilters(WsExceptionFilter)
   @UseGuards(GeneralGuard)
   @UsePipes(
@@ -514,10 +512,10 @@ export class CreateGameGateway extends CqrsBase {
   )
   async execute(
     @ConnectedSocket() client: Socket,
-    @MessageBody() data: CreateGameGatewayRequest,
+    @MessageBody() data: PlayerRejoinGatewayRequest,
   ) {
-    this.logger.log(&#x60;${this.execute.name} Init client:: ${data.playerId}&#x60;);
-    await this.dispatch(new ThrowDicesGateway(data.playerId, client.id));
+    this.logger.log(&#x60;${this.execute.name} Init client:: ${client.id}&#x60;);
+    await this.dispatch(new PlayerRejoinCommand(client.id, data.playerId));
     this.logger.log(&#x60;${this.execute.name} Finish&#x60;);
   }
 }
@@ -559,7 +557,7 @@ export class CreateGameGateway extends CqrsBase {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'CreateGameGateway.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlayerRejoinGateway.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

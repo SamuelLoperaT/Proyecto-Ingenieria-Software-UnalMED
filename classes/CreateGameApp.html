@@ -131,7 +131,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/contexts/game/application/create/CreateGameApp.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/contexts/game/application/create/CreateGameApp.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -199,7 +199,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/contexts/game/application/create/CreateGameApp.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/contexts/game/application/create/CreateGameApp.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -235,8 +235,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/contexts/game/application/create/CreateGameApp.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/contexts/game/application/create/CreateGameApp.ts:22</a></div>
                 </td>
             </tr>
 
@@ -318,6 +318,7 @@ import { ClientId } from &#x27;../../../players/domain/ClientId&#x27;;
 import { ColorConstants } from &#x27;../../../shared/domain/ColorConstants&#x27;;
 import { PlayerStatusConstants } from &#x27;../../../players/domain/PlayerStatusConstants&#x27;;
 import { GameStatusConstants } from &#x27;../../domain/GameStatusConstants&#x27;;
+import { GameTypesConstants } from &#x27;../../domain/GameTypesConstants&#x27;;
 
 export class CreateGameApp {
   private logger: Logger &#x3D; new Logger(CreateGameApp.name);
@@ -329,7 +330,10 @@ export class CreateGameApp {
   async execute(playerId: PlayerId, clientId: ClientId): Promise&lt;void&gt; {
     this.logger.log(&#x60;[${this.execute.name}] INIT&#x60;);
     const colors &#x3D; Object.values(ColorConstants);
-    const selectedColor &#x3D; colors[Math.floor(Math.random() * colors.length)];
+    const selectedColor &#x3D; colors.splice(
+      Math.floor(Math.random() * colors.length),
+      1,
+    );
     const game: Game &#x3D; Game.fromPrimitives({
       gameId: GameId.generate().toString(),
       players: [
@@ -337,7 +341,7 @@ export class CreateGameApp {
           playerId: playerId.toString(),
           catchCount: 0,
           clientId: clientId.toString(),
-          color: selectedColor,
+          color: selectedColor[0],
           host: true,
           ladder: [],
           penalties: 0,
@@ -348,11 +352,13 @@ export class CreateGameApp {
         }).toPrimitives(),
       ],
       dices: [],
+      numberOfDices: 2,
       numberOfTabs: 4,
-      selectedColors: [],
+      availableColors: colors,
       status: GameStatusConstants.PENDING,
       winners: [],
       board: null,
+      type: GameTypesConstants.STANDARD,
     });
     await this.socketManager.addClientToRoom(
       clientId.toString(),
