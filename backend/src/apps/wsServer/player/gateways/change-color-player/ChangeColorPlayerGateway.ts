@@ -16,15 +16,15 @@ import { WsExceptionFilter } from '../../../../../contexts/shared/infrastructure
 import { GeneralGuard } from '../../../../../contexts/shared/application/GeneralGuard';
 import { WsServerDecorator } from '../../../../../contexts/shared/infrastructure/gateways/WsServerDecorator';
 import { CqrsBase } from '../../../../../contexts/shared/domain/CqrsBase';
-import { ThrowDicesGateway } from '../../../../../contexts/game/application/create/ThrowDicesGateway';
-import { CreateGameGatewayRequest } from './CreateGameGatewayRequest';
+import { ChangeColorPlayerGatewayRequest } from './ChangeColorPlayerGatewayRequest';
+import { ChangeColorPlayerCommand } from '../../../../../contexts/game/application/change-color-player/ChangeColorPlayerCommand';
 
 @WsServerDecorator()
-export class CreateGameGateway extends CqrsBase {
-  private logger: Logger = new Logger(CreateGameGateway.name);
-  private static readonly MESSAGE = 'CREATE_GAME';
+export class ChangeColorPlayerGateway extends CqrsBase {
+  private logger: Logger = new Logger(ChangeColorPlayerGateway.name);
+  private static readonly MESSAGE = 'CHANGE_COLOR_PLAYER';
 
-  @SubscribeMessage(CreateGameGateway.MESSAGE)
+  @SubscribeMessage(ChangeColorPlayerGateway.MESSAGE)
   @UseFilters(WsExceptionFilter)
   @UseGuards(GeneralGuard)
   @UsePipes(
@@ -35,10 +35,17 @@ export class CreateGameGateway extends CqrsBase {
   )
   async execute(
     @ConnectedSocket() client: Socket,
-    @MessageBody() data: CreateGameGatewayRequest,
+    @MessageBody() data: ChangeColorPlayerGatewayRequest,
   ) {
     this.logger.log(`${this.execute.name} Init client:: ${data.playerId}`);
-    await this.dispatch(new ThrowDicesGateway(data.playerId, client.id));
+    await this.dispatch(
+      new ChangeColorPlayerCommand(
+        data.playerId,
+        data.gameId,
+        client.id,
+        data.color,
+      ),
+    );
     this.logger.log(`${this.execute.name} Finish`);
   }
 }

@@ -10,6 +10,7 @@ export type GameMessagesData<T extends GameMessagesConstants> = MessagesData<
 export class GameMessagesDataConfig
   implements Required<Record<GameMessagesConstants, any>>
 {
+  USER_LEAVE: GameDto;
   GAME_CREATED: GameDto;
   USER_JOINED: GameDto;
 }
