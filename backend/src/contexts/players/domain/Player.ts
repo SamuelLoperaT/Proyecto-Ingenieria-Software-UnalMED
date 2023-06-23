@@ -24,6 +24,7 @@ export class Player
   public readonly lastTabsMoved: Array<Tab>;
   public readonly tabsAvailable: number;
   public readonly playerId: PlayerId;
+  public online = true;
 
   constructor(
     catchCount: number,

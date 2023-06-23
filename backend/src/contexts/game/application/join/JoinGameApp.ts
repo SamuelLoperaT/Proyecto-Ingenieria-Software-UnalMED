@@ -8,6 +8,7 @@ import { GameMessagesConstants } from '../../domain/GameMessagesConstants';
 import { GameMessagesDataConfig } from '../../domain/GameMessagesData';
 import { ClientId } from '../../../players/domain/ClientId';
 import { PlayerStatusConstants } from '../../../players/domain/PlayerStatusConstants';
+import { ColorConstants } from '../../../shared/domain/ColorConstants';
 
 export class JoinGameApp {
   private logger: Logger = new Logger(JoinGameApp.name);
@@ -29,11 +30,15 @@ export class JoinGameApp {
     ) {
       throw new Error('PLAYER ALREADY IN GAME');
     }
+    const selectedColor = game.availableColors.splice(
+      Math.floor(game.availableColors.length * Math.random()),
+      1,
+    );
     game.players.push(
       Player.fromPrimitives({
         catchCount: 0,
         clientId: clientId.toString(),
-        color: undefined,
+        color: selectedColor[0].toString() as ColorConstants,
         host: false,
         ladder: [],
         penalties: 0,

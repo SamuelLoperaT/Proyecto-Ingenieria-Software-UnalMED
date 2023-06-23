@@ -1,11 +1,11 @@
-import { DomainRoot } from '../shared/domain/DomainRoot';
-import { ParamsOf } from '../shared/domain/ParamsOf';
+import { DomainRoot } from '../../shared/domain/DomainRoot';
+import { ParamsOf } from '../../shared/domain/ParamsOf';
 import { BoardDto } from './BoardDto';
-import { Box } from '../box/domain/Box';
-import { GameId } from '../game/domain/GameId';
-import { Jail } from '../jail/domain/Jail';
-import { Sky } from '../sky/domain/Sky';
-import { Locate } from '../locate/domain/Locate';
+import { Box } from '../../box/domain/Box';
+import { GameId } from '../../game/domain/GameId';
+import { Jail } from '../../jail/domain/Jail';
+import { Sky } from '../../sky/domain/Sky';
+import { Locate } from '../../locate/domain/Locate';
 
 export class Board extends DomainRoot<BoardDto> implements ParamsOf<BoardDto> {
   public boxes: Array<Box>;

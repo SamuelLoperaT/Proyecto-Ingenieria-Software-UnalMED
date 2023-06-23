@@ -10,6 +10,7 @@ import { ClientId } from '../../../players/domain/ClientId';
 import { ColorConstants } from '../../../shared/domain/ColorConstants';
 import { PlayerStatusConstants } from '../../../players/domain/PlayerStatusConstants';
 import { GameStatusConstants } from '../../domain/GameStatusConstants';
+import { GameTypesConstants } from '../../domain/GameTypesConstants';
 
 export class CreateGameApp {
   private logger: Logger = new Logger(CreateGameApp.name);
@@ -21,7 +22,10 @@ export class CreateGameApp {
   async execute(playerId: PlayerId, clientId: ClientId): Promise<void> {
     this.logger.log(`[${this.execute.name}] INIT`);
     const colors = Object.values(ColorConstants);
-    const selectedColor = colors[Math.floor(Math.random() * colors.length)];
+    const selectedColor = colors.splice(
+      Math.floor(Math.random() * colors.length),
+      1,
+    );
     const game: Game = Game.fromPrimitives({
       gameId: GameId.generate().toString(),
       players: [
@@ -29,7 +33,7 @@ export class CreateGameApp {
           playerId: playerId.toString(),
           catchCount: 0,
           clientId: clientId.toString(),
-          color: selectedColor,
+          color: selectedColor[0],
           host: true,
           ladder: [],
           penalties: 0,
@@ -40,11 +44,13 @@ export class CreateGameApp {
         }).toPrimitives(),
       ],
       dices: [],
+      numberOfDices: 2,
       numberOfTabs: 4,
-      selectedColors: [],
+      availableColors: colors,
       status: GameStatusConstants.PENDING,
       winners: [],
       board: null,
+      type: GameTypesConstants.STANDARD,
     });
     await this.socketManager.addClientToRoom(
       clientId.toString(),
