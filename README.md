@@ -6,8 +6,8 @@
 # Autores
 
 - Samuel Lopera Torres C.C. 1001003785
-- Juan Jose Navarro Saldarriaga C.C. 1007614821
-- Danilo Isaac Garcia Castaño
+- Juan Jose Navarro Saldarriaga C.C. 1193086302
+- Danilo Isaac Garcia Castaño C.C. 1001479858
 - Juan Camilo Montoya Mejia C.C. 1007614821
 - Wesly Samira Huertas Salinas C.C. 1002331562
 - Yeferson Steven Aguilar Alvarado C.C. 1001687113
